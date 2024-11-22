@@ -2,17 +2,17 @@
 
 
 ## Exemplos de utilização em pipelines
-- github actions:
-[doc oficial](https://github.com/aquasecurity/trivy-action?tab=readme-ov-file#trivy-action) 
-[github actions yaml](../examples/github/trivy.yaml)
+### github actions:
+- [doc oficial](https://github.com/aquasecurity/trivy-action?tab=readme-ov-file#trivy-action) 
+- [github actions yaml](../examples/github/trivy.yaml)
 
-- gitlab:
-[doc oficial](https://docs.gitlab.com/ee/user/application_security/container_scanning/)
-[gitlab yaml](../examples/gitlab/gitlab.yaml)
+### gitlab:
+- [doc oficial](https://docs.gitlab.com/ee/user/application_security/container_scanning/)
+- [gitlab yaml](../examples/gitlab/gitlab.yaml)
 
-- Kubernetes
-[doc oficial](https://aquasecurity.github.io/trivy-operator/latest/getting-started/installation/helm/)
-[Instalando com helm](../examples/Kubernetes/README.md)
+### Kubernetes
+- [doc oficial](https://aquasecurity.github.io/trivy-operator/latest/getting-started/installation/helm/)
+- [Instalando com helm](../examples/Kubernetes/README.md)
 
 
 
