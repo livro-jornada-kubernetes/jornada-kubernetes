@@ -96,7 +96,7 @@ Failures: 1 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 1, CRITICAL: 0)
 
 ```
 
-#### Scan um filesystem tanto local ou o root
+### Scan um filesystem tanto local ou o root
 
 ```bash
 trivy fs /path/to/project
