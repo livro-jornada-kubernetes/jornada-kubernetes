@@ -28,3 +28,7 @@
 
 ```
 - Existem muitas configs que podem ser personalizadas, para ver todas as disponiveis segue o [link](https://raw.githubusercontent.com/aquasecurity/trivy-operator/v0.22.0/deploy/helm/values.yaml)
+
+### Para mais informações de como testar o operator e todas suas funcionalidades basta acessar o seguinte link: 
+
+[Doc oficial](https://aquasecurity.github.io/trivy-operator/v0.3.0/operator/quick-start/)

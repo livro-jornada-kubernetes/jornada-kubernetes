@@ -18,11 +18,11 @@
 
 
 ## Como instalar o trivy 
-- [Doc](https://trivy.dev/v0.27.1/getting-started/installation/)
+- [Doc oficial](https://trivy.dev/v0.27.1/getting-started/installation/)
 
 ## Comandos Trivy disponiveis (Binário) 
 
-- scaneando uma imagem: 
+### scaneando uma imagem: 
 
 ```bash
 trivy image [YOUR_IMAGE_NAME]
@@ -64,7 +64,7 @@ Total: 1 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 1)
 
 ```
 
-- Scan de misconfigurations:
+### Scan de misconfigurations:
 
 ```bash
 trivy config [YOUR_IAC_DIR]
@@ -96,7 +96,7 @@ Failures: 1 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 1, CRITICAL: 0)
 
 ```
 
-- Scan um filesystem tanto local ou o root
+#### Scan um filesystem tanto local ou o root
 
 ```bash
 trivy fs /path/to/project
@@ -104,3 +104,46 @@ trivy fs /path/to/project
 trivy rootfs /path/to/rootfs
 
 ```
+
+### scan vulnerabilidades SBOM 
+
+```bash
+trivy sbom [flags] SBOM_PATH
+```
+
+- Exemplo:
+```bash
+   # Scan CycloneDX e mostre o resultado em forma de tabela
+  $ trivy sbom /path/to/report.cdx
+
+  # Scan CycloneDX-type attestation e mostre o resultado em forma de tabela
+  $ trivy sbom /path/to/report.cdx.intoto.jsonl
+``` 
+- [Doc oficial](https://github.com/aquasecurity/trivy/blob/main/docs/docs/references/configuration/cli/trivy_sbom.md)
+
+### Scan de um repositorio
+
+```bash
+trivy repository [flags] (REPO_PATH | REPO_URL)
+```
+
+- Exemplos: 
+```bash
+  # Scan your remote git repository
+  $ trivy repo https://github.com/knqyf263/trivy-ci-test
+  # Scan your local git repository
+  $ trivy repo /path/to/your/repository 
+```
+- [Doc oficial](https://github.com/aquasecurity/trivy/blob/main/docs/docs/references/configuration/cli/trivy_repository.md)
+
+
+### Mais subcomandos: 
+
+* [trivy clean](https://github.com/aquasecurity/trivy/blob/main/docs/docs/references/configuration/cli/trivy_clean.md)	 - Remove o cache
+* [trivy convert](https://github.com/aquasecurity/trivy/blob/main/docs/docs/references/configuration/cli/trivy_convert.md)	 - Converte Trivy JSON reporte para um diferente formato
+* [trivy kubernetes](https://github.com/aquasecurity/trivy/blob/main/docs/docs/references/configuration/cli/trivy_kubernetes.md)	 - [EXPERIMENTAL] Scan kubernetes cluster
+* [trivy module](https://github.com/aquasecurity/trivy/blob/main/docs/docs/references/configuration/cli/trivy_module.md)	 - Gerencia modules
+* [trivy plugin](https://github.com/aquasecurity/trivy/blob/main/docs/docs/references/configuration/cli/trivy_plugin.md)	 - Gerencia os plugins
+* [trivy registry](https://github.com/aquasecurity/trivy/blob/main/docs/docs/references/configuration/cli/trivy_registry.md)	 - Gerencia os registrys de autenticação
+* [trivy server](https://github.com/aquasecurity/trivy/blob/main/docs/docs/references/configuration/cli/trivy_server.md)	 - Server mode
+* [trivy version](https://github.com/aquasecurity/trivy/blob/main/docs/docs/references/configuration/cli/trivy_server.md)	 - Print the version
