@@ -1,0 +1,18 @@
+apiVersion: "cilium.io/v2"
+kind: CiliumNetworkPolicy
+metadata:
+  name: "regra1"
+spec:
+  description: "Política L4 para restringir acesso à Estrela da Morte somente com naves do Império"
+  endpointSelector:
+    matchLabels:
+      org: imperio
+      class: estrela-da-morte
+  ingress:
+  - fromEndpoints:
+    - matchLabels:
+        org: imperio
+    toPorts:
+    - ports:
+      - port: "80"
+        protocol: TCP
