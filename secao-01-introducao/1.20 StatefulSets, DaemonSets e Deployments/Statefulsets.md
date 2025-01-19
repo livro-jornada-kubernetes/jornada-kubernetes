@@ -44,7 +44,7 @@ No exemplo, é criado um StatefulSet chamado `web` que cria 3 réplicas de um po
 
 Podemos observar a ordem que o StatefulSet respeita no momento da criação dos seus pods conforme abaixo: 
 
-SS1
+![](figuras/StatefulSet/SS1.png)
 
 Perceba que o pod web-1 só aparece depois que o pod web-0 está pronto. Assim como o web-2 só aparece depois que o web-1 fica pronto.
 
@@ -85,7 +85,7 @@ Para listar StatefulSets, utilizamos o comando:
 
 na figura também mostramos a listagem dos pods correspondente ao statefulset:
 
-SS2
+![](figuras/StatefulSet/SS2.png)
 
 ## Detalhando um StatefulSet
 
@@ -95,7 +95,7 @@ Para consultarmos maiores detalhes sobre um StatefulSet, utilizamos o comando:
 
 a resposta esperada do comando será parecida com:
 
-SS3
+![](figuras/StatefulSet/SS3.png)
 
 Aqui podemos ver os detalhes a respeito do statefulset, inclusive os eventos relacionados a ele como criação de pods e seus respectivos PVCs, conforme a imagem.
 
@@ -118,7 +118,7 @@ Será exibida uma saída parecida com:
 
 ``` statefulset.apps/web scaled ```
 
-SS4
+![](figuras/StatefulSet/SS4.png)
 
 ## Estratégias de atualizações
 
@@ -135,6 +135,6 @@ Para deletar um StatefulSet, utilizamos o comando:
 
 ``` kubectl delete statefulset web``` 
 
-SS5
+![](figuras/StatefulSet/SS5.png)
 
-Perceba que todos os pods foram removidos junto com seu StatefulSet
+Todos os pods foram removidos junto com seu StatefulSet.

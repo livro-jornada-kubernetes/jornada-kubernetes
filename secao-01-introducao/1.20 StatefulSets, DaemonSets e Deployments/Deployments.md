@@ -56,7 +56,7 @@ Para listar Deployments, utilizamos o comando:
 
 na figura também mostramos a listagem dos pods correspondente ao deployment:
 
-DT1.png
+![](figuras/Deployment/DT1.png)
 
 Perceba que esses comandos já nos trazem algumas informações básicas.
 
@@ -68,7 +68,7 @@ Para consultarmos maiores detalhes sobre um Deployment, utilizamos o comando:
 
 a resposta esperada do comando será parecida com:
 
-DT2.png
+![](figuras/Deployment/DT2.png)
 
 Podemos ver todos os detalhes sobre nosso deployment, inclusive os antigos e novos ReplicaSets dele.
 
@@ -89,11 +89,11 @@ Será exibida uma saída parecida com:
 
 ``` deployment.apps/nginx-deployment scaled ```
 
-DT3
+![](figuras/Deployment/DT3.png)
 
 Nesse momento são criadas as replicas necessárias para atender o novo estado desejado, ou seja, inicialmente tinhamos 3 réplicas, são criadas mais 7 réplicas, totalizando as 10 que foram solicitadas no comando.
 
-DT4
+![](figuras/Deployment/DT4.png)
 
 ## Atualizando um Deployment
 Imagine que queremos atualizar a imagem nginx utilizada pelo deployment, alterando de `nginx:1.14.2` para `nginx:1.26.2`. Dessa forma, usamos o comando:
@@ -112,11 +112,11 @@ Será exibida uma saída parecida com:
 
 ``` deployment.apps/nginx-deployment image updated ```
 
-DT5
+![](figuras/Deployment/DT5.png)
 
 Nesse momento é criado um novo ReplicaSet, que criará 3 réplicas usando a nova imagem, de forma que para cada pod criado com a imagem nova, um pod rodando com a imagem anterior é encerrado, até que só existam os pods com a nova imagem.
 
-DT6
+![](figuras/Deployment/DT6.png)
 
 Perceba que os nomes dos pods são diferentes de antes da atualização.
 
@@ -128,13 +128,13 @@ Para listar esse históricos, usamos o comando:
 
 ``` kubectl rollout history deployment/nginx-deployment ```
 
-DT7
+![](figuras/Deployment/DT7.png)
 
 Para consultarmos o conteúdo de cada revision, usamos:
 
 ```  kubectl rollout history deployment/nginx-deployment --revision=REVISION ```
 
-DT8
+![](figuras/Deployment/DT8.png)
 
 ## RollBack de versões 
 
@@ -142,15 +142,15 @@ Digamos que você definiu a imagem errada em uma atualização de Deployment e p
 
 ``` kubectl rollout undo deployment/nginx-deployment ```
 
-DT9
+![](figuras/Deployment/DT9.png)
 
 O comando efetuado dessa forma retorna para revision imediatamente anterior, mas ele também aceita que você informe a revision para qual você quer mudar. Digamos que queremos voltar para a revision 1, onde usamos a imagem `nginx:1.14.2` :
 
-DT10
+![](figuras/Deployment/DT10.png)
 
 Foram criados novos pods, todos com a imagem `nginx:1.14.2`.
 
-DT11
+![](figuras/Deployment/DT11.png)
 
 ## Deletando um Deployment
 
@@ -158,7 +158,7 @@ Para deletar um Deployment, utilizamos o comando:
 
 ``` kubectl delete deployment nginx-deployment```
 
-DT12
+![](figuras/Deployment/DT12.png)
 
 
 Perceba que todos os pods foram removidos junto com seu Deployment
