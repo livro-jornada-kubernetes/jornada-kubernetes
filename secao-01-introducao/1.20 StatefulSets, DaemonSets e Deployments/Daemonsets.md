@@ -35,8 +35,7 @@ Para listar DaemonSets, utilizamos o comando:
 
 na figura também mostramos a listagem dos pods correspondente ao DaemonSet:
 
-DS1
-
+![](figuras/DaemonSet/DS1.png)
 
 ## Detalhando um DaemonSet
 
@@ -46,10 +45,7 @@ Para consultarmos maiores detalhes sobre um DaemonSet, utilizamos o comando:
 
 a resposta esperada do comando será parecida com:
 
-DS2
-
-
-
+![](figuras/DaemonSet/DS2.png)
 
 ## Estratégias de atualizações
 
@@ -66,7 +62,7 @@ Para deletar um DaemonSet, utilizamos o comando:
 
 ``` kubectl delete daemonset node-name-printer``` 
 
-DS3
+![](figuras/DaemonSet/DS3.png)
 
 
-Perceba que todos os pods foram removidos junto com seu DaemonSet
+Perceba que todos os pods foram removidos junto com seu DaemonSet.
