@@ -1,0 +1,63 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: estrela-da-morte
+  labels:
+    app.kubernetes.io/name: estrela-da-morte
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+  selector:
+    org: imperio
+    class: estrela-da-morte
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: estrela-da-morte
+  labels:
+    app.kubernetes.io/name: estrela-da-morte
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      org: imperio
+      class: estrela-da-morte
+  template:
+    metadata:
+      labels:
+        org: imperio
+        class: estrela-da-morte
+        app.kubernetes.io/name: estrela-da-morte
+    spec:
+      containers:
+      - name: estrela-da-morte
+        image: quay.io/cilium/starwars:v2.1@sha256:833d915ec68fca3ce83668fc5dae97c455b2134d8f23ef96586f55b894cfb1e8
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: caca-tie
+  labels:
+    org: imperio
+    class: caca-tie
+    app.kubernetes.io/name: caca-tie
+spec:
+  containers:
+  - name: nave
+    image: quay.io/cilium/json-mock:v1.3.8@sha256:5aad04835eda9025fe4561ad31be77fd55309af8158ca8663a72f6abb78c2603
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: asa-x
+  labels:
+    app.kubernetes.io/name: asa-x
+    org: alianca
+    class: asa-x
+spec:
+  containers:
+  - name: nave
+    image: quay.io/cilium/json-mock:v1.3.8@sha256:5aad04835eda9025fe4561ad31be77fd55309af8158ca8663a72f6abb78c2603
