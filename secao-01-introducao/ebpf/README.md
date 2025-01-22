@@ -2,6 +2,14 @@
 
 Códigos da seção 1.27, "eBPF e sua relevância no ecossistema Kubernetes".
 
+## Contato
+
+Aoba, aqui é o Caio, autor desse capítulo :-)
+
+Se achar algum erro, quiser tirar dúvidas ou mesmo jogar conversa fora sobre tecnologia, você pode me encontrar nos links abaixo:
+- [GitHub](https://github.com/caiodallaqua)
+- [LinkedIn](https://www.linkedin.com/in/caiodallaqua/)
+
 ## Tutorial
 
 Visando facilitar na parte prática, deixamos aqui o passo-a-passo que está no livro.
