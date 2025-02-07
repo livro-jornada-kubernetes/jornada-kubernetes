@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-flask-pg-svc
+  labels:
+    app: app-flask-pg
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8080
+    name: web
+  selector:
+    app: app-flask-pg
