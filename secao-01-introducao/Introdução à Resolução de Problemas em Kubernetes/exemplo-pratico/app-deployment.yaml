@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-flask-pg
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: app-flask-pg
+  template:
+    metadata:
+      labels:
+        app: app-flask-pg
+    spec:
+      containers:
+        - name: app-flask-pg
+          image: jornadak8s:exemplo
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DB_HOST
+              value: my-release-postgresql.default.svc.cluster.local 
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: my-release-postgresql
+                  key: password
+            - name: DB_USER
+              value: "andre"
+            - name: DB_PORT                                              
+              value: "5432"
+            - name: DB_NAME
+              value: "pgk8s"
+          resources:
+            limits:
+              memory: 64Mi
+              cpu: 200m
+            requests:
+              memory: 32Mi
+              cpu: 100m
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 3
+            timeoutSeconds: 8 
+
+            
